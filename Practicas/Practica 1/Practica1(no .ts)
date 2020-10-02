@@ -1,0 +1,76 @@
+const deepEquals = (obj1: object, obj2: object): boolean => {
+    const obj1keys = Object.keys(obj1).sort();   //Creamos dos array, uno para cada objeto, con sus parametros dentro en forma de string
+    const obj2keys = Object.keys(obj2).sort();
+    if (obj1 === obj2) {  //Si comparten la misma dirección de memoria, entonces son iguales
+        return true;
+    } else if ((typeof obj1 === "object" && obj1 != null) && (typeof obj2 === "object" && obj2 != null)) { //Comprobamos que sean objetos
+        if (obj1keys.length !== obj2keys.length) { //Si el tamaño de los arrays son distintos entonces no tienen son iguales
+            return false;
+        }
+        if (obj1keys.join("") !== obj2keys.join("")) { //Juntamos todos los elementos del array y comprobamos si la unión en un solo string de los parametros apunta al mismo sitio.
+            return false;
+        }
+        for (let i: number = 0; i < obj1keys.length; i++) { //Recorremos los valores de los parametros de forma recursiva
+            if (!deepEquals(Object.values(obj1)[i], Object.values(obj2)[i])) { //Si hay alguno que no sea igual, entonces no son iguales
+                return false;
+            }
+        }
+        return true; //Si no es false ninguna de las otras, entonces devolvemos true
+    } else {
+        return false; //Si no es un objeto, o es null, entonces no pueden ser iguales
+    }
+}
+
+const deepClone = (obj: object): object => {
+    if (typeof obj === "object") {
+        let clonedObj: any = Array.isArray(obj) ? [] : {} //Creamos un array o un objeto que puede almacenar los valores
+        for (let i: number = 0; i < Object.keys(obj).length; i++) {    //Clonamos todos los elementos a nuestro nuevo objeto 
+            clonedObj[Object.keys(obj)[i]] = deepClone(Object.values(obj)[i])
+        }
+        return clonedObj; //devolvemos el nuevo objeto
+    } else {
+        return obj //Si no es un objeto, devolvemos el parametro inicial
+    }
+}
+
+interface IPersona {
+    noc: object[]
+    noc2?: object[]
+    name: string;
+    edad: number;
+    coche: boolean
+}
+
+const a: IPersona = {
+    name: "Luis",
+    edad: 19,
+    noc: [{ noc1: 1, nocnoc: "nocnoc" }, { noc2: 2, nocnoc2: "nocnoc2" },],
+    noc2: [{ ede: 2341 }, { de: "ede" }],
+    coche: true
+}
+
+const b: IPersona = {
+    name: "Luis",
+    edad: 19,
+    noc: [{ noc1: 1, nocnoc: "nocnoc" }, { noc2: 2, nocnoc2: "nocnoc2" },],
+    noc2: [{ ede: 2341 }, { de: "ede" }],
+    coche: true
+}
+
+const deepPrint2 = (obj: object) => {
+    for (let i: number = 0; i < Object.keys(obj).length; i++) { //Recorremos con un for
+        if (Array.isArray(Object.values(obj)[i])) {   //Si encontramos un objeto, entonces llamamos a la funcion dando como objeto la posicion del nuevo objeto encontrado
+            console.log(`${Object.keys(obj)[i]}: `)   //Puramente visual
+            deepPrint2(Object.values(obj)[i])
+        } else {
+            console.log(`${Object.keys(obj)[i]}:`, Object.values(obj)[i]) //En caso de no es un objeto, imprimimos.
+        }
+    }
+}
+
+
+//deepPrint2(a)
+//console.log(Object.values(a)[1])
+//console.log(typeof Object.keys(a)[2])
+//console.log(deepEquals(a, b))
+console.log(deepClone(a))
