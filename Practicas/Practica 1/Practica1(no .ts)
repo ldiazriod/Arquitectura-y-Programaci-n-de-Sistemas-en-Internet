@@ -40,6 +40,13 @@ interface IPersona {
     edad: number;
     coche: boolean
 }
+interface IPersona2 {
+    noc: object[]
+    noc2?: object[]
+    namee: string;
+    edad: number;
+    coche: boolean
+}
 
 const a: IPersona = {
     name: "Luis",
@@ -57,20 +64,87 @@ const b: IPersona = {
     coche: true
 }
 
-const deepPrint2 = (obj: object) => {
+const e: IPersona = {
+    name: "Luis",
+    edad: 19,
+    noc: [{ noc1: 50000, nocnoc: "No hay nocnoc" }, { noc2: 2, nocnoc2: "nocnoc2" },],
+    noc2: [{ ede: 2341 }, { de: "ede" }],
+    coche: true
+}
+
+
+const c: IPersona2 = {
+    namee: "Luis",
+    edad: 19,
+    noc: [{ noc1: 1, nocnoc: "nocnoc" }, { noc2: 2, nocnoc2: "nocnoc2" },],
+    noc2: [{ ede: 2341 }, { de: "ede" }],
+    coche: true
+}
+
+const f: IPersona = {
+    name: "Manuela",
+    edad: 19,
+    noc: [{ noc1: 1, nocnoc: "nocnoc" }, { noc2: 2, nocnoc2: "nocnoc2" },],
+    noc2: [{ ede: 2341 }, { de: "ede" }],
+    coche: true
+}
+
+const g: IPersona = {
+    name: "Alba",
+    edad: 20,
+    noc: [{ noc1: 1, nocnoc: "nocnoc" }, { noc2: 2, nocnoc2: "nocnoc2" },],
+    coche: true
+}
+const h: IPersona = {
+    name: "Fernando",
+    edad: 32,
+    coche: true
+}
+
+const d = c;
+
+const deepPrint = (obj: object) => {
     for (let i: number = 0; i < Object.keys(obj).length; i++) { //Recorremos con un for
         if (Array.isArray(Object.values(obj)[i])) {   //Si encontramos un objeto, entonces llamamos a la funcion dando como objeto la posicion del nuevo objeto encontrado
             console.log(`${Object.keys(obj)[i]}: `)   //Puramente visual
-            deepPrint2(Object.values(obj)[i])
+            deepPrint(Object.values(obj)[i])
         } else {
             console.log(`${Object.keys(obj)[i]}:`, Object.values(obj)[i]) //En caso de no es un objeto, imprimimos.
         }
     }
 }
 
+console.log("Arquitectura y Programacion de Sistemas en Internet")
+console.log("Practica 1: deepEquals, deepPrint y deepClone")
+console.log("Realizado por: Luis Díaz del Río Delgado")
+console.log("Fuentes: Internet y algunos compañeros")
 
-//deepPrint2(a)
-//console.log(Object.values(a)[1])
-//console.log(typeof Object.keys(a)[2])
-//console.log(deepEquals(a, b))
+console.log("--------------deepEquals--------------")
+
+console.log("Comparar dos objetos iguales: ")
+console.log(deepEquals(a, b))
+console.log("Comprar dos objetos distintos, con un nombre de atributo distinto: ")
+console.log(deepEquals(a, c))
+console.log("Comprar dos objetos apuntado al mismo espacio de memoria: ")
+console.log(deepEquals(c, d))
+console.log("Comparar dos objetos distintos, con un atributo de tipo objeto distinto: ")
+console.log(deepEquals(a, e))
+console.log("Comprar dos objetos distintos, con valor del atributo nombre distinto: ")
+console.log(deepEquals(a, f))
+
+console.log("--------------deepPrint--------------")
+
+console.log("Imprimir un objeto con dos atributos tipo objeto: ")
+deepPrint(a)
+console.log("Imprimir un objeto con un solo atributo tipo objeto: ")
+deepPrint(g)
+console.log("Imprimir un objeto con solo atributos simples: ")
+deepPrint(h)
+
+console.log("--------------deepClone--------------")
+console.log("Clonar un objeto con dos atributo tipo objeto: ")
 console.log(deepClone(a))
+console.log("Clonar un objeto con un atributo tipo objeto: ")
+console.log(deepClone(g))
+console.log("Clonar un objeto con atributos simples: ")
+console.log(h)
