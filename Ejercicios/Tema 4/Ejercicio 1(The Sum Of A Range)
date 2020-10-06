@@ -1,0 +1,32 @@
+function range(start: number, end: number){
+    const arr: number[] = []
+    for(let i: number = start; i <= end; i++){
+        arr.push(i)
+    }
+    return arr;
+}
+
+function range2(start: number, end: number, step: number){
+    const arr: number[] = []
+    if(step >= 0){
+        for(let i: number = start; i <= end; i+= step){
+        arr.push(i)
+        }
+    }else{
+        for(let j: number = end; j >= start; j += step ){
+            arr.push(j)
+        }
+    }
+    return arr
+}
+
+function sum(arr: number[]){
+    let stackSum: number = 0;
+    for(let i: number = 0; i < arr.length; i++){
+        stackSum += arr[i];
+    }
+    return stackSum;
+}
+console.log(range2(2, 5, -1))
+console.log(range(1, 10))
+console.log(sum(range(1, 10)))
