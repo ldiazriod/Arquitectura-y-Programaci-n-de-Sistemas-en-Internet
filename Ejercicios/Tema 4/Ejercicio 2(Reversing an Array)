@@ -1,0 +1,23 @@
+function reverseArray(arr: any[]){
+    const newArray: any[] = []
+    for(let i: number = arr.length-1; i >= 0; i--){
+        newArray.push(arr[i])
+    }
+    return newArray
+}
+
+function reverseArrayInPlace(arr: any[]){
+    for(let i: number = arr.length-1; i >= 0; i--){
+        arr.push(arr[i])
+    }
+    arr.splice(0, arr.length/2)
+
+    return arr
+}
+
+const ar1: number[] = [1, 2, 3, 4, 5]
+const ar2: string[] = ["R", "o", "m", "a"]
+
+console.log(reverseArray(ar1))
+console.log(reverseArray(ar2))
+console.log(reverseArrayInPlace(ar1))
