@@ -1,0 +1,117 @@
+const suma = (a: number, b: number): number => {
+    return a + b;
+}
+
+//Ejemplo
+
+const multiplyBy = (n: number) => {
+    return (a: number): number => n * a;
+}
+
+const double = multiplyBy(2);
+console.log(double(3)) //devuelve 6
+
+//Ejercicio
+
+console.log("-----Ejercicios-----")
+
+const traduccion = (idioma: string) => {
+    return (name: string): string =>{
+        if(idioma === "Español"){
+            return `Hola ${name}`
+        }else if(idioma === "Ingles"){
+            return `Hello ${name}`
+        }else{
+            return `No se hablar en ese idioma ${name} `
+        }
+    }
+}
+
+
+const hi = traduccion("Español")
+console.log(hi("Luis"))
+
+console.log("-------------------")
+
+const greetInLang = (greet: string) => {
+    return (name: string): string => {
+        return greet + name;
+    }
+}
+
+const a: number[] = [1, 2, 3, 4, 3];
+
+const for_each = (v: number[], fn: Function): void  => {
+    for(let i: number = 0; i < v.length; i++){
+        fn(v[i])
+    }
+}
+
+for_each(a, function printElemen(val: number){
+    console.log(val)
+})
+
+console.log("-------------------")
+
+for_each(a, function printPar(val: number){
+    if(val % 2 === 0){
+        console.log(val)
+    }
+})
+
+const greetInItalian = greetInLang("Ciao ")
+const greetInEnglish = greetInLang("Hello ")
+
+const saludo: string = greetInItalian("Javi");
+
+const map = (v: any[], fn: Function): any[] =>{
+    const arr: any[] = [];
+    for(let i: number = 0; i < v.length; i++){
+        arr.push(fn(v[i]))
+    }
+    return arr;
+}
+
+map(a, function changeEvenToString(val: number){
+    if(val % 2 === 0){
+        return `${val}`
+    }else{
+        return val
+    }
+})
+
+
+const filter = (v: any[], fn: Function): any[] =>{
+    const arr: any[] = []
+    for(let i: number = 0; i < v.length; i++){
+        if(fn(v[i])){
+            arr.push(v[i])
+        }
+    }
+    return arr;
+}
+
+const b = filter(a, function onlyEven(val: any){
+    if(val % 2 === 0){
+        return val;
+    }
+})
+console.log("-----------------")
+console.log(b)
+
+const filterConIndex = (v: any[], fn: Function){
+    const arr: any[] = []
+    for(let i: number = 0; i < v.length; i++){
+        if(fn(v[i], i)){
+            arr.push(v[i])
+        }
+    }
+    return arr
+}
+
+const d = filterConIndex(a, function divisible3IndiceImpar(val: number, index: number){
+    return (val % 3 === 0 && index % 2 === 0)
+})
+
+console.log("------------------")
+console.log(d)
