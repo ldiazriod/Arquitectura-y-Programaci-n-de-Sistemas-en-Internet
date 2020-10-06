@@ -1,0 +1,5 @@
+let piramid: String = "#"
+for(let i: number = 0; i < 7; i++){
+    console.log(piramid);
+    piramid = piramid + "#"
+}
