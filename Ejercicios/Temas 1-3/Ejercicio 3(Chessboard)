@@ -1,0 +1,22 @@
+let chessboard: string = "<br /n>"
+let size: number = 8;
+
+for(let i: number = 0; i < size; i++){
+    for(let j: number = 0; j < size; j++){
+        if(i % 2 === 0){
+            if(j % 2 === 0){
+                chessboard += " "
+            }else{
+                chessboard += "#"
+            }
+        }else{
+            if(j % 2 === 0){
+                chessboard += "#"
+            }else{
+                chessboard += " "
+            }
+        }
+    }
+    chessboard += "<br /n>"
+}
+console.log(chessboard)
