@@ -1,0 +1,19 @@
+function countBs(frase: string){
+    let n: number = 0;
+    for(let i: number = 0; i < frase.length; i++){
+        if(frase[i] === "B"){
+            n++;
+        }
+    }
+    return n;
+}
+
+function countChar(frase: string, letter: string){
+    let n: number = 0;
+    for(let i: number = 0; i < frase.length; i++){
+        if(frase[i] === letter){
+            n++;
+        }
+    }
+    return n;
+}
