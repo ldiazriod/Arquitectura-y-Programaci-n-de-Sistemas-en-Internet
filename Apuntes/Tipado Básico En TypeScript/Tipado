@@ -1,0 +1,111 @@
+Boolean: 
+let <VariableName>: boolean = true/false
+
+Number:
+let <VariableName>: number = typeOfNumber
+typeOfNumber: Decimal, hex, binary, octal, big.
+
+String:
+let <VariableName>: string = <charChain>
+
+//Template strings
+
+Strings surrounded by the backtick/backquote (`).
+The embedded expressions are of the form ${ expresion }.
+
+let <VariableName>: string = `<charChain>`;
+let age: number = 37;
+let sentence: string = `Hello, my name is ${VariableName}.
+
+I'll be ${age + 1} years old next month.`;
+
+Array: 
+
+//First way
+let <VariableName>: <dataType>[] = [dataTypeVariable1, dataTypeVariable2, ..., dataTypeVariableN];
+
+//Second way
+let <VariableName>: Array<<dataType>> =  [dataTypeVariable1, dataTypeVariable2, ..., dataTypeVariableN];
+
+//Examples:
+let list: numer[] = [1, 2, 3];
+let list: Array<number> = [1, 2, 3];
+
+Tuple:
+
+Allow you to express an array with a fixed number of elements whose types are known, but need not to be the same.
+
+let <VariableName>: [dataType1, dataType2];
+<VariableName> = [dataType1Variable, dataType2Variable]
+They must be declare in order
+
+When accessing an element with a known index:
+
+console.log(<variableName>[0].substring(1)).
+
+You can not expand the index of the Tuple.
+
+Enum:
+
+Is like Structs in C++
+
+enum <EnumName>{
+ newEnumType1,
+ newEnumType2,
+ newEnumType3,
+}
+let <VariableName>: EnumName = EnumName.newEnumType2
+
+//Ejemplo:
+
+enum Color{
+ Red,
+ Green,
+ Blue,
+}
+
+let c: Color = Color.Green;
+
+By default enums begin numbering their members starting at 0. You can change this by manually setting the value of one of its members.
+
+enum <EnumName>{
+ newEnumType1 = 1,
+ newEnumType2,
+ newEnumType3,
+}
+ //Ejemplo:
+ 
+ enum Color{
+ Red = 1,
+ Green,
+ Blue,
+}
+
+Now Green has the value 2.
+You can also set the values of the other variables.
+
+Finally you can go from value to the name of that value.
+
+//Ejemplo:
+
+ enum Color{
+ Red = 1,
+ Green,
+ Blue,
+}
+
+let ColorName: string = Color[2];
+
+//Displays 'Green'
+console.log(colorName);
+
+Unknown:
+
+let notSure: unknown = 4;
+notSure = "Maybe a string insted";
+
+//Ok, is a boolean not a String
+notSure = false;
+
+declare const maybe: unknown;
+//Type unknown is not assignable to type 'number'
