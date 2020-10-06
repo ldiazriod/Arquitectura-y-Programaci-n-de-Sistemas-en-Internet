@@ -2,7 +2,6 @@
 Para apuntes, exámenes y practicas
 
 ## Practicas
-
 * [Practica 1](https://github.com/ldiazriod/Arquitectura-y-Programaci-n-de-Sistemas-en-Internet/tree/main/Practicas/Practica%201)
 
 ## Ejercicios
@@ -19,3 +18,7 @@ Ejercicios del libro y pedidos en clase
 #### Tema 4
 * [Ejercicio 1(The Sum Of a Range)](https://github.com/ldiazriod/Arquitectura-y-Programaci-n-de-Sistemas-en-Internet/blob/main/Ejercicios/Tema%204/Ejercicio%201(The%20Sum%20Of%20A%20Range))
 * [Ejercicio 2(Reversing an Array)](https://github.com/ldiazriod/Arquitectura-y-Programaci-n-de-Sistemas-en-Internet/blob/main/Ejercicios/Tema%204/Ejercicio%202(Reversing%20an%20Array))
+
+## Apuntes
+* [Tipado básico en TypeScript](https://github.com/ldiazriod/Arquitectura-y-Programaci-n-de-Sistemas-en-Internet/blob/main/Apuntes/Tipado%20B%C3%A1sico%20En%20TypeScript/Tipado)
+* [Programación Funcional](https://github.com/ldiazriod/Arquitectura-y-Programaci-n-de-Sistemas-en-Internet/blob/main/Apuntes/Funciones/Programaci%C3%B3n%20Funcional%20(Ejemplos))
