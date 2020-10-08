@@ -15,3 +15,11 @@ promise.then( () =>{
 }).catch( () => {
     console.log("Promesa rechazada")
 })
+
+//objeto[nobre]++
+
+//if(!Obj[nombre]){
+    //Obj[nombre] = 0
+//}else{
+    //Obj[nombre]++
+//}
