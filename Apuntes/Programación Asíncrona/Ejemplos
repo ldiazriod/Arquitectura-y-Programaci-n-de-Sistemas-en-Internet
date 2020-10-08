@@ -1,0 +1,17 @@
+//Callback  
+console.log("empiezo")
+setTimeout( () => console.log("Han pasado 3 segundos"), 3000)  //Callback, time to Callback
+console.log("sigo")
+
+//Promise
+let a = 5;
+const promise = new Promise((resolve, reject) => {
+    if(a === 1) resolve();
+    else reject();
+})
+
+promise.then( () =>{
+    console.log("Promesa resuelta")
+}).catch( () => {
+    console.log("Promesa rechazada")
+})
