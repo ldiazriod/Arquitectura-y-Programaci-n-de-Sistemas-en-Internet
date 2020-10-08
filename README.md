@@ -22,3 +22,9 @@ Ejercicios del libro y pedidos en clase
 ## Apuntes
 * [Tipado básico en TypeScript](https://github.com/ldiazriod/Arquitectura-y-Programaci-n-de-Sistemas-en-Internet/blob/main/Apuntes/Tipado%20B%C3%A1sico%20En%20TypeScript/Tipado)
 * [Programación Funcional](https://github.com/ldiazriod/Arquitectura-y-Programaci-n-de-Sistemas-en-Internet/blob/main/Apuntes/Funciones/Programaci%C3%B3n%20Funcional%20(Ejemplos))
+
+## Enlaces
+
+* [TypeScript Playground](https://www.typescriptlang.org/play?#code/FAAhQ)
+* [Eloquent JavaScript](https://eloquentjavascript.net/index.html)
+
