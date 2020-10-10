@@ -23,3 +23,10 @@ promise.then( () =>{
 //}else{
     //Obj[nombre]++
 //}
+
+const json = fetch("https://rickandmortyapi.com/api/episode/")
+json.then((response) => {
+return response.json();
+}).then( (jsonData) => {
+console.log(jsonData)
+})
