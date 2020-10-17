@@ -1,0 +1,41 @@
+import {
+  MongoClient,
+} from "https://deno.land/x/mongo@v0.12.1/mod.ts";
+
+try{
+  //! InsertOne
+  const client = new MongoClient();
+  client.connectWithUri("mongodb+srv://ldiazriod:nebrija@web-luis.4vdzr.gcp.mongodb.net/web-luis?retryWrites=true&w=majority");
+
+interface UserCollection{
+  _id: {$oid: string}
+  name: string;
+  year: number;
+}
+
+const db = client.database("nebrija");
+const courses = db.collection<UserCollection>("UserCollection");
+
+const course: Partial<UserCollection> ={
+  name: "te quiero",
+  year: 1670,
+}
+
+const insertCourse = await courses.insertOne(course);
+
+//! InsertMany
+
+const insertMany = await courses.insertMany([
+  {
+    name: "insertManyPrueba1",
+    year: 1
+  },
+  {
+    name: "insertManyPrueba2",
+    year: 2
+  },
+]);
+
+}catch(e){
+  console.log(e);
+}
