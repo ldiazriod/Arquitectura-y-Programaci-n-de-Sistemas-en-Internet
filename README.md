@@ -23,6 +23,9 @@ Ejercicios del libro y pedidos en clase
 * [Tipado básico en TypeScript](https://github.com/ldiazriod/Arquitectura-y-Programaci-n-de-Sistemas-en-Internet/blob/main/Apuntes/Tipado%20B%C3%A1sico%20En%20TypeScript/Tipado)
 * [Programación Funcional](https://github.com/ldiazriod/Arquitectura-y-Programaci-n-de-Sistemas-en-Internet/blob/main/Apuntes/Funciones/Programaci%C3%B3n%20Funcional%20(Ejemplos))
 * [Programación Asíncrona](https://github.com/ldiazriod/Arquitectura-y-Programaci-n-de-Sistemas-en-Internet/blob/main/Apuntes/Programaci%C3%B3n%20As%C3%ADncrona/Ejemplos)
+* [Trabajar con URLs](https://github.com/ldiazriod/Arquitectura-y-Programaci-n-de-Sistemas-en-Internet/blob/main/Apuntes/Mongo%20y%20URLs/URL/Count%20Characters)
+* [Mongo (Ejemplos)](https://github.com/ldiazriod/Arquitectura-y-Programaci-n-de-Sistemas-en-Internet/blob/main/Apuntes/Mongo%20y%20URLs/InsertOne%20e%20InsertMany/Ejemplo%20Inserts)
+
 
 ## Enlaces
 
